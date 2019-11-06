@@ -16,3 +16,25 @@ df['Date of Publication'].isnjll().sum() / len(df)
 //percent of lost values from conversion to integer//
 
 
+np.where(condition, then, else)
+//takes each element and evaluates if it meets the condtion being True//
+np.where(conditon1, x1,
+  np.where(conditon2, x2,
+     np.where(condition3, x3)))
+     
+df['Place of Publication'].head(10)
+df.loc[4157862]
+df.loc[4159587]
+
+pub = df['Place of Publication']
+london = pub.str.contains('London')
+london[:5}
+oxford = pub.str.contains('Oxford')
+
+df.['Place of Publication'] = np.where(london, 'London',
+                                      np.where(oxford, 'Oxford',
+                                              pub.str.replace('-', ' ')))
+df['Place of Publication'].head()
+
+
+
