@@ -1,0 +1,18 @@
+df.get_dtype_counts()
+//dtype almost the same as str//
+
+df.loc[1905:, 'Date of Publication'].head(10)
+
+regrx = r'^(\d{4})'
+//finds the first 4 digits of a str//
+// ^finds the start of the str//
+
+extr = df['Date of Publication'].str.extract(r'^(\d{4})', expland=False)
+extr.head()
+
+df['Date of Publication'] = pd.to_numeric(extr)
+df['Date of Publication'].dtype
+df['Date of Publication'].isnjll().sum() / len(df)
+//percent of lost values from conversion to integer//
+
+
