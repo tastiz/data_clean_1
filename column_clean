@@ -1,0 +1,31 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('Datasets/BL-Flickr-Images-Book.csv')
+df.head()
+
+to_drop = ['Edition Statement',
+			'Corporate Author']
+
+df.drop(to_drop, inplace=True, axis=1)
+df.drop(columns=to_drop, inplace=True)
+
+df('Identifier').is_unique
+
+df = df.set_index('Identifier')
+df.head()
+
+//Index does not guarentee being 'unique'//
+
+df.loc[206]
+
+//.loc[] is a special class that does not follow general python syntax//
+
+df.iloc[0]
+
+//locates by indexing position//
+
+df.set_index('Identifier', inplace=True)
+
+
+
