@@ -1,0 +1,4 @@
+olympics_df = pd.read.csv('Datatsets/olympics.csv')
+olympics_df.head()
+
+
