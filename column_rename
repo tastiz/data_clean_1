@@ -5,3 +5,10 @@ olympics_df.head()
 olympics_df = pd.read_csv('Datasets/olympics.csv', head=1)
 olympics_df.head()
 
+
+new_names = {'Unnames: 0': 'Country', '? Summer': 'Summer Olympics', '01 !': 'Gold','02 !': 'Silver',
+'? Winter': 'Winter Olympics', '03 !': 'Bronze', '01 !.1': 'Gold','02 !.1': 'Silver','03 !.1': 'Bronze',
+'? Games': '# Games', '01 !.2': 'Gold','02 !.2': 'Silver','03 !.2': 'Bronze',
+
+olympics_df.rename(columns=new_names, inplace=True)
+olympics_df.head()
