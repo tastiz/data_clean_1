@@ -1,0 +1,4 @@
+towns_df = pd.DataFrame(university_towns,
+                                  columns=['State', 'RegionName'])
+
+towns_df.head.head()
