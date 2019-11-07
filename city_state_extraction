@@ -1,4 +1,23 @@
+university_towns = []
+with open('Datasets/university_towns.txt') as file:
+     for line in file:
+      if '[edit]' in line:
+        state = line
+      else:
+        university_towns.append((state, line))
+university_towns[:5]
+
 towns_df = pd.DataFrame(university_towns,
                                   columns=['State', 'RegionName'])
 
 towns_df.head.head()
+
+def get_citystate(item):
+    if ' (' in item:
+        return item[:item.find(' (')]
+    elif '[' in item:
+        return item[:item.find(' [')]
+    else:
+        return item
+
+towns_df = towns_df.applymap(get_citystate)
